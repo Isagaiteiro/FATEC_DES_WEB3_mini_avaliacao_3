@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from app.views import route_all_holidays
+from app.views import route_all_holidays, route_form
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('all-holidays/', route_all_holidays, name="all-holidays")
+    path('all-holidays/', route_all_holidays, name="all-holidays"),
+    path('form/', route_form, name="form"),
 ]

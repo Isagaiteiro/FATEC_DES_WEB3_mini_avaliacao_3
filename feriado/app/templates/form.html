@@ -3,5 +3,34 @@
 {% load static %}
 
 {% block content %}
-    
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome do Feriado</th>
+                <th scope="col">Dia</th>
+                <th scope="col">Mês</th>
+            </tr>
+            {% for value in List %}
+            <tbody>
+                <tr>
+                    <th scope="row">{{value.id}}</th>
+                    <th scope="row">{{value.nome_feriado}}</th>
+                    <th scope="row">{{value.dia}}</th>
+                    <th scope="row">{{value.mes}}</th>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </thead>
+
+    </table>
+
+    <form method="get">
+        <input type="text" class="form-control" placeholder="" name="search" id="search">
+
+        <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary" type="submit" id="search">Buscar</button>
+        </div>
+
+    </form>
 {% endblock %}
