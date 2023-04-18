@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-
+from tkinter import *
 from .models import FeriadoModel
 
 def index(request):
@@ -7,15 +7,13 @@ def index(request):
 
 def route_all_holidays(request):
     List = FeriadoModel.objects.all()
-    
     return render(request, 'all_holidays.html', {'List': List})
 
 #Realizando busca e filtrando a tabela
 def route_form(request):
     List = FeriadoModel.objects.all()
     
-
-    #Django recebe o que foi digitado no input nome
+    #Django recebe o que foi digitado no input
     busca_nome = request.GET.get('nome')
     busca_dia = request.GET.get('dia')
     busca_mes = request.GET.get('mes')
@@ -23,5 +21,12 @@ def route_form(request):
     if busca_nome:
         #Realiza um filtro na tabela
         List = FeriadoModel.objects.filter(nome_feriado__icontains = busca_nome)
-    return render(request, 'form.html', {'List': List})
+        return render(request, 'form.html', {'List': List})
+    
+    if busca_dia:
+        List = FeriadoModel.objects.filter(dia__exact = busca_dia)
+        return render(request, 'form.html', {'List': List})
 
+    if busca_mes:
+        List = FeriadoModel.objects.filter(mes__exact = busca_mes)
+        return render(request, 'form.html', {'List': List})
