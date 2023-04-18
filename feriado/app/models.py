@@ -5,11 +5,11 @@ from django.db import models
 class FeriadoModel(models.Model):
     id = models.AutoField(primary_key=True)
     nome_feriado = models.CharField(max_length=100)
-    dia = models.IntegerField(max_length=2)
-    mes = models.IntegerField(max_length=2)
+    dia = models.IntegerField
+    mes = models.IntegerField
     modificado_em = models.DateField(auto_now=True)
     
-#Renomeando a Tabla
+#Renomeando a Tabela
 class Meta:
     db_table = 'feriados'
     

@@ -1,12 +1,30 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'modelo.html' %}
+
+{% load static %}
+
+{% block content %}
+    <h1>Todos os Feriados</h1>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome do Feriado</th>
+                <th scope="col">Dia</th>
+                <th scope="col">Mês</th>
+            </tr>
+            {% for value in List %}
+            <tbody>
+                <tr>
+                    <th scope="row">{{value.id}}</th>
+                    <th scope="row">{{value.nome}}</th>
+                    <th scope="row">{{value.dia}}</th>
+                    <th scope="row">{{value.mes}}</th>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </thead>
+
+    </table>
+
+{% endblock %}

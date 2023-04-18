@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-# Create your views here.
+from .models import FeriadoModel
+
+def route_all_holidays(request):
+    List = FeriadoModel.objects.all()
+    
+    return render(request, 'all_holidays.html', {'List': List})
