@@ -3,6 +3,16 @@
 {% load static %}
 
 {% block content %}
+    <form method="get" class="mt-5 p-5">
+        <input type="text" class="form-control" placeholder="Nome do Feriado" name="nome" id="nome">
+        <input type="number" nim=1 max=31 class="form-control mt-3" placeholder="Dia do Feriado" name="dia" id="dia">
+        <input type="number" nim=1 max=12 class="form-control mt-3" placeholder="Mês do Feriado" name="mes" id="mes">
+
+        <div class="input-group-prepend mt-3">
+            <button class="btn btn-outline-secondary" type="submit" id="search">Buscar</button>
+        </div>
+
+    </form>
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
@@ -24,13 +34,4 @@
         </thead>
 
     </table>
-
-    <form method="get">
-        <input type="text" class="form-control" placeholder="" name="search" id="search">
-
-        <div class="input-group-prepend">
-            <button class="btn btn-outline-secondary" type="submit" id="search">Buscar</button>
-        </div>
-
-    </form>
 {% endblock %}

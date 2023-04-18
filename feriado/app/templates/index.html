@@ -3,4 +3,17 @@
 {% load static %}
 
 {% block content %}
+    
+
+    <form method="get" action="" class="mt-5 p-5">
+        <h1>Verifique se hoje é Feriado!</h1>
+
+        <button tipe="submit">Testar</button>
+    </form>
+    
+    {% if dia %}
+    {% else %}
+    {% endif %}
+
+    <!-- Testar se a data ou o nome do feriado for verdadeiro, renderiza para a página holiday, se não renderiza para a página not-holiday -->
 {% endblock %}
